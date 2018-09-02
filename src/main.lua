@@ -16,7 +16,7 @@ local current, current_max, p
 
 while true do
 	current = component.energy_device.getEnergyStored()
-	current_max = component.energy_device.getMaxEnergyStrored()
+	current_max = component.energy_device.getMaxEnergyStored()
 
 	p = current / current_max * 100
 
