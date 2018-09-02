@@ -6,6 +6,7 @@ local event = require("event")
 local fs = require("filesystem")
 local shell = require("shell")
 local term = require("term")
+local mkdir = loadfile("/bin/mkdir.lua")
 
 local gpu = component.gpu
 
@@ -50,6 +51,8 @@ if not getInternet() then
 end
 
 downloadFromRepo("run.lua")
+
+mkdir("src/")
 
 downloadFromRepo("src/main.lua")
 
