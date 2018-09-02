@@ -1,9 +1,8 @@
 print("Starting....")
 
-local charts  charts ==  requirerequire((""chartscharts"")
+local charts = require("charts")
 
-)  
-local container  container = charts.Container()
+local container = charts.Container()
 local payload = charts.Histogram {
   max = 80,
   align = charts.sides.RIGHT,
@@ -11,7 +10,6 @@ local payload = charts.Histogram {
     return 0x20ff20
   end
 }
-
 container.payload = payload
 
 for i = 1, 400, 1 do
