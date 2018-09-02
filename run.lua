@@ -35,7 +35,7 @@ local function downloadFile(url,path,force,soft)
         error("file already exists and option -f is not enabled")
       end
     end
-    return wget("-q",url,path)
+    return wget("-q", url, path)
   end
 end
 
@@ -49,8 +49,9 @@ if not getInternet() then
     os.exit()
 end
 
-downloadFromRepo("run.lua")
+downloadFromRepo("update.lua")
 
-downloadFromRepo("src/main.lua")
+loadfile("update.lua")()
+loadfile("src/main.lua")()
 
 return true
