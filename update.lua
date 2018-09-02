@@ -52,7 +52,7 @@ end
 
 downloadFromRepo("run.lua")
 
-mkdir("src/")
+if not fs.isDir("src/") then mkdir("src/")
 
 downloadFromRepo("src/main.lua")
 
