@@ -21,6 +21,7 @@ while true do
 	p = current / current_max * 100
 
 	table.insert(payload.values, p)
+	container:draw()
 	os.sleep(1)
 end
 
