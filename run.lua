@@ -51,7 +51,11 @@ end
 
 downloadFromRepo("update.lua")
 
+package.path = './lib/?.lua;' .. package.path
+package.path = './src/?.lua;' .. package.path
+
 os.execute("update.lua")
-os.execute("src/main.lua")
+
+require("main")
 
 return true
