@@ -1,6 +1,7 @@
 print("Starting....")
 
 local charts = require("charts")
+local component = require("component")
 
 local container = charts.Container()
 local payload = charts.Histogram {
