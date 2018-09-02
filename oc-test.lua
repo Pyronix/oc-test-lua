@@ -1,7 +1,6 @@
 local component = require("component")
 local event = require("event")
 local fs = require("filesystem")
-local serial = require("serialization")
 local shell = require("shell")
 local term = require("term")
 
@@ -22,9 +21,25 @@ local function getInternet()
   return true
 end
 
+local function downloadFile(url,path,force,soft)
+  if options.f or force then
+    return wget("-fq",url,path)
+  else
+    if fs.exists(path) then
+      if soft then
+        return true
+      else
+        error("file already exists and option -f is not enabled")
+      end
+    end
+    return wget("-q",url,path)
+  end
+end
 
 if not getInternet() then
     os.exit()
 end
+
+downloadFile("https://raw.githubusercontent.com/Pyronix/oc-test-lua/master/update.lua", "update.lua", true, false)
 
 print("Welcome!")
