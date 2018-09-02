@@ -51,7 +51,7 @@ end
 
 downloadFromRepo("update.lua")
 
-loadfile("update.lua")()
-loadfile("src/main.lua")()
+require("update.lua")
+require("src/main.lua")
 
 return true
