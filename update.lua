@@ -51,11 +51,6 @@ if not getInternet() then
 end
 
 downloadFromRepo("run.lua")
-
-if not fs.isDirectory("src/") then 
-	mkdir("src/")
-end
-
 downloadFromRepo("src/main.lua")
 
 return true

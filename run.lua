@@ -51,7 +51,7 @@ end
 
 downloadFromRepo("update.lua")
 
-require("update.lua")
-require("src/main.lua")
+os.execute("update.lua")
+os.execute("src/main.lua")
 
 return true
