@@ -29,7 +29,7 @@ print("Starting....")
 --return true
 
 local event = require("event")
-local interface = require("interface")
+local interface = require("lib.interface")
 local screen = 1
 local rand = 0
 
@@ -67,3 +67,5 @@ while true do
         interface.setLabelText("s1-5","Amount: "..rand)
     end
 end
+
+return true

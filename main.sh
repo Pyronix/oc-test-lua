@@ -1,3 +1,0 @@
-print("Welcome!") 
-
-return true
